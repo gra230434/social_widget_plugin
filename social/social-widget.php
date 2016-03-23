@@ -56,9 +56,9 @@ class SocialPostWidget extends WP_Widget {
 
 		/* If show announcement was selected, display the announcement. */
 		if ( $facebook || $twitter ){
-      echo '<ul class="member_social">';
-      if ( $facebook ) {echo '<li class="social_plugin_facebook"><a href=' . $facebook . '><img class="social_plugin_img" src="'.plugin_dir_url( __FILE__ ).'img/ico_facebook.png"></a></li>';}
-      if ( $twitter ) {echo '<li class="social_plugin_twitter"><a href=' . $twitter . '><img class="social_plugin_img" src="'.plugin_dir_url( __FILE__ ).'img/ico_twitter.png"></a></li>';}
+      echo '<ul class="member_social_plugin">';
+      if ( $facebook ) {echo '<li class="social_plugin_facebook"><a href=' . $facebook . '><div class="social_plugin_ico"><img class="social_plugin_img" src="'.plugin_dir_url( __FILE__ ).'img/facebook_icon.png"></div></a></li>';}
+      if ( $twitter ) {echo '<li class="social_plugin_twitter"><a href=' . $twitter . '><div class="social_plugin_ico"><img class="social_plugin_img" src="'.plugin_dir_url( __FILE__ ).'img/twitter_icon.png"></div></a></li>';}
       echo '</ul>';
     }
 
