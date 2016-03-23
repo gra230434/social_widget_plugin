@@ -1,0 +1,24 @@
+.social_plugin_facebook a {
+  width:30px;
+  height:30px;
+  border-radius: 50%;
+  background: #333;
+}
+.social_plugin_facebook a:hover {
+  background: #0059B3;
+}
+
+.social_plugin_twitter a {
+  width:30px;
+  height:30px;
+  border-radius: 50%;
+  background: #333;
+}
+.social_plugin_twitter a:hover {
+  background: #00CCFF;
+}
+
+.social_plugin_img {
+  width:30px;
+  height:30px;
+}
