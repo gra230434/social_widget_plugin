@@ -85,7 +85,7 @@ class SocialPostWidget extends WP_Widget {
 	function form( $instance ) {
 
 		/* Set up some default widget settings. */
-		$defaults = array( 'title' => 'video', 'videourl' => '' );
+		$defaults = array( 'title' => 'social link', 'facebook' => 'facebook', 'twitter' => 'twitter', 'youtube' => 'youtube');
 		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
 
 		<p>
@@ -94,18 +94,15 @@ class SocialPostWidget extends WP_Widget {
 		</p>
     <p>
 			<label for="<?php echo $this->get_field_id( 'facebook' ); ?>">Facebook:</label>
-			<input id="<?php echo $this->get_field_id( 'facebook' ); ?>" name="<?php echo $this->get_field_name( 'facebook' ); ?>" style="width:100%;">
-			<pre><?php echo $instance['facebook']; ?></pre>
+			<input id="<?php echo $this->get_field_id( 'facebook' ); ?>" name="<?php echo $this->get_field_name( 'facebook' ); ?>" value="<?php echo $instance['facebook']; ?>" style="width:100%;">
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'witter' ); ?>">Twitter:</label>
-			<input id="<?php echo $this->get_field_id( 'twitter' ); ?>" name="<?php echo $this->get_field_name( 'twitter' ); ?>" style="width:100%;">
-			<pre><?php echo $instance['twitter']; ?></pre>
+			<label for="<?php echo $this->get_field_id( 'twitter' ); ?>">Twitter:</label>
+			<input id="<?php echo $this->get_field_id( 'twitter' ); ?>" name="<?php echo $this->get_field_name( 'twitter' ); ?>" value="<?php echo $instance['twitter']; ?>" style="width:100%;">
 		</p>
     <p>
 			<label for="<?php echo $this->get_field_id( 'youtube' ); ?>">Twitter:</label>
-			<input id="<?php echo $this->get_field_id( 'youtube' ); ?>" name="<?php echo $this->get_field_name( 'youtube' ); ?>" style="width:100%;">
-			<pre><?php echo $instance['twitter']; ?></pre>
+			<input id="<?php echo $this->get_field_id( 'youtube' ); ?>" name="<?php echo $this->get_field_name( 'youtube' ); ?>" value="<?php echo $instance['youtube']; ?>" style="width:100%;">
 		</p>
 
 	<?php
