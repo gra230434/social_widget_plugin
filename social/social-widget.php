@@ -95,7 +95,7 @@ class SocialPostWidget extends WP_Widget {
 			<pre><?php echo $instance['facebook']; ?></pre>
 		</p>
 		<p>
-			<label for="<?php echo $this->get_field_id( 'witter' ); ?>">Twitter:</label>
+			<label for="<?php echo $this->get_field_id( 'twitter' ); ?>">Twitter:</label>
 			<input id="<?php echo $this->get_field_id( 'twitter' ); ?>" name="<?php echo $this->get_field_name( 'twitter' ); ?>" style="width:100%;">
 			<pre><?php echo $instance['twitter']; ?></pre>
 		</p>
