@@ -46,6 +46,7 @@ class SocialPostWidget extends WP_Widget {
     $title = $instance['title'];
 		$facebook = $instance['facebook'];
 		$twitter = $instance['twitter'];
+    $youtube = $instance['youtube'];
 
 		/* Before widget (defined by themes). */
 		echo $before_widget;
@@ -55,10 +56,11 @@ class SocialPostWidget extends WP_Widget {
 			echo $before_title . $title . $after_title;
 
 		/* If show announcement was selected, display the announcement. */
-		if ( $facebook || $twitter ){
+		if ( $facebook || $twitter || $youtube){
       echo '<ul class="member_social_plugin">';
       if ( $facebook ) {echo '<li class="social_plugin_facebook"><a href=' . $facebook . '><div class="social_plugin_ico"><img class="social_plugin_img" src="'.plugin_dir_url( __FILE__ ).'img/facebook_icon.png"></div></a></li>';}
       if ( $twitter ) {echo '<li class="social_plugin_twitter"><a href=' . $twitter . '><div class="social_plugin_ico"><img class="social_plugin_img" src="'.plugin_dir_url( __FILE__ ).'img/twitter_icon.png"></div></a></li>';}
+      if ( $youtube ) {echo '<li class="social_plugin_youtube"><a href=' . $youtube . '><div class="social_plugin_ico"><img class="social_plugin_img" src="'.plugin_dir_url( __FILE__ ).'img/youtube_icon.png"></div></a></li>';}
       echo '</ul>';
     }
 
@@ -74,6 +76,7 @@ class SocialPostWidget extends WP_Widget {
 		$instance['title'] = strip_tags( $new_instance['title'] );
 		$instance['facebook'] = strip_tags( $new_instance['facebook'] );
     $instance['twitter'] = strip_tags( $new_instance['twitter'] );
+    $instance['youtube'] = strip_tags( $new_instance['youtube'] );
 
 		return $instance;
 	}
@@ -82,7 +85,7 @@ class SocialPostWidget extends WP_Widget {
 	function form( $instance ) {
 
 		/* Set up some default widget settings. */
-		$defaults = array( 'title' => 'video', 'videourl' => '' );
+		$defaults = array( 'title' => 'social link', 'facebook' => 'facebook', 'twitter' => 'twitter', 'youtube' => 'youtube');
 		$instance = wp_parse_args( (array) $instance, $defaults ); ?>
 
 		<p>
@@ -91,13 +94,20 @@ class SocialPostWidget extends WP_Widget {
 		</p>
     <p>
 			<label for="<?php echo $this->get_field_id( 'facebook' ); ?>">Facebook:</label>
-			<input id="<?php echo $this->get_field_id( 'facebook' ); ?>" name="<?php echo $this->get_field_name( 'facebook' ); ?>" style="width:100%;">
-			<pre><?php echo $instance['facebook']; ?></pre>
+			<input id="<?php echo $this->get_field_id( 'facebook' ); ?>" name="<?php echo $this->get_field_name( 'facebook' ); ?>" value="<?php echo $instance['facebook']; ?>" style="width:100%;">
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'twitter' ); ?>">Twitter:</label>
+<<<<<<< HEAD
 			<input id="<?php echo $this->get_field_id( 'twitter' ); ?>" name="<?php echo $this->get_field_name( 'twitter' ); ?>" style="width:100%;">
 			<pre><?php echo $instance['twitter']; ?></pre>
+=======
+			<input id="<?php echo $this->get_field_id( 'twitter' ); ?>" name="<?php echo $this->get_field_name( 'twitter' ); ?>" value="<?php echo $instance['twitter']; ?>" style="width:100%;">
+		</p>
+    <p>
+			<label for="<?php echo $this->get_field_id( 'youtube' ); ?>">Twitter:</label>
+			<input id="<?php echo $this->get_field_id( 'youtube' ); ?>" name="<?php echo $this->get_field_name( 'youtube' ); ?>" value="<?php echo $instance['youtube']; ?>" style="width:100%;">
+>>>>>>> origin/master
 		</p>
 
 	<?php
