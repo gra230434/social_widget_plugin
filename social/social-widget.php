@@ -43,10 +43,10 @@ class SocialPostWidget extends WP_Widget {
 		extract( $args );
 
 		/* Our variables from the widget settings. */
-    $title = $instance['title'];
+    	$title = $instance['title'];
 		$facebook = $instance['facebook'];
 		$twitter = $instance['twitter'];
-    $youtube = $instance['youtube'];
+    	$youtube = $instance['youtube'];
 
 		/* Before widget (defined by themes). */
 		echo $before_widget;
@@ -57,10 +57,10 @@ class SocialPostWidget extends WP_Widget {
 
 		/* If show announcement was selected, display the announcement. */
 		if ( $facebook || $twitter || $youtube){
-      echo '<ul class="member_social_plugin">';
-      if ( $facebook ) {echo '<li class="social_plugin_facebook"><a href=' . $facebook . '><div class="social_plugin_ico"><img class="social_plugin_img" src="'.plugin_dir_url( __FILE__ ).'img/facebook_icon.png"></div></a></li>';}
-      if ( $twitter ) {echo '<li class="social_plugin_twitter"><a href=' . $twitter . '><div class="social_plugin_ico"><img class="social_plugin_img" src="'.plugin_dir_url( __FILE__ ).'img/twitter_icon.png"></div></a></li>';}
-      if ( $youtube ) {echo '<li class="social_plugin_youtube"><a href=' . $youtube . '><div class="social_plugin_ico"><img class="social_plugin_img" src="'.plugin_dir_url( __FILE__ ).'img/youtube_icon.png"></div></a></li>';}
+      		echo '<ul class="member_social_plugin">';
+      	if ( $facebook ) {echo '<li class="social_plugin_facebook"><a href=' . $facebook . '><div class="social_plugin_ico"><img class="social_plugin_img" src="'.plugin_dir_url( __FILE__ ).'img/facebook_icon.png"></div></a></li>';}
+      	if ( $twitter ) {echo '<li class="social_plugin_twitter"><a href=' . $twitter . '><div class="social_plugin_ico"><img class="social_plugin_img" src="'.plugin_dir_url( __FILE__ ).'img/twitter_icon.png"></div></a></li>';}
+      	if ( $youtube ) {echo '<li class="social_plugin_youtube"><a href=' . $youtube . '><div class="social_plugin_ico"><img class="social_plugin_img" src="'.plugin_dir_url( __FILE__ ).'img/youtube_icon.png"></div></a></li>';}
       echo '</ul>';
     }
 
@@ -75,8 +75,8 @@ class SocialPostWidget extends WP_Widget {
 		/* Strip tags for title and name to remove HTML (important for text inputs). */
 		$instance['title'] = strip_tags( $new_instance['title'] );
 		$instance['facebook'] = strip_tags( $new_instance['facebook'] );
-    $instance['twitter'] = strip_tags( $new_instance['twitter'] );
-    $instance['youtube'] = strip_tags( $new_instance['youtube'] );
+    	$instance['twitter'] = strip_tags( $new_instance['twitter'] );
+    	$instance['youtube'] = strip_tags( $new_instance['youtube'] );
 
 		return $instance;
 	}
@@ -92,22 +92,20 @@ class SocialPostWidget extends WP_Widget {
 			<label for="<?php echo $this->get_field_id( 'title' ); ?>">Title: </label>
 			<input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $instance['title']; ?>" style="width:100%;" />
 		</p>
-    <p>
+    	<p>
 			<label for="<?php echo $this->get_field_id( 'facebook' ); ?>">Facebook:</label>
 			<input id="<?php echo $this->get_field_id( 'facebook' ); ?>" name="<?php echo $this->get_field_name( 'facebook' ); ?>" value="<?php echo $instance['facebook']; ?>" style="width:100%;">
 		</p>
 		<p>
 			<label for="<?php echo $this->get_field_id( 'twitter' ); ?>">Twitter:</label>
-<<<<<<< HEAD
 			<input id="<?php echo $this->get_field_id( 'twitter' ); ?>" name="<?php echo $this->get_field_name( 'twitter' ); ?>" style="width:100%;">
 			<pre><?php echo $instance['twitter']; ?></pre>
-=======
 			<input id="<?php echo $this->get_field_id( 'twitter' ); ?>" name="<?php echo $this->get_field_name( 'twitter' ); ?>" value="<?php echo $instance['twitter']; ?>" style="width:100%;">
 		</p>
-    <p>
+    	<p>
 			<label for="<?php echo $this->get_field_id( 'youtube' ); ?>">Twitter:</label>
 			<input id="<?php echo $this->get_field_id( 'youtube' ); ?>" name="<?php echo $this->get_field_name( 'youtube' ); ?>" value="<?php echo $instance['youtube']; ?>" style="width:100%;">
->>>>>>> origin/master
+
 		</p>
 
 	<?php
